@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -164,15 +165,6 @@ public class domTest {
                     List<String> genres_list = dt.movieGenres.get(index).getGenres();
                     for(String temp : genres_list){
                         if(!temp.equals("null") && !genres.contains(temp) && !existsGneres(temp, genres)){
-//                            String query = String.format("select id from genres where name = '%s'", temp);
-//                            PreparedStatement statement = conn.prepareStatement(query);
-//                            ResultSet countRs = statement.executeQuery();
-//                            if(countRs.next() == false){
-//                                psInsertRecord.setString(1, temp);
-//                                psInsertRecord.addBatch();
-//                                duplicate.add(temp);
-//                                genres.add(temp);
-//                            }
                             psInsertRecord.setString(1, temp);
                             psInsertRecord.addBatch();
                             duplicate.add(temp);
@@ -335,7 +327,7 @@ public class domTest {
         Connection conn = null;
 
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        String jdbcURL="jdbc:mysql://localhost:3306/moviedb";
+        String jdbcURL="jdbc:mysql://localhost:3306/moviedbexample";
 
         try {
             conn = DriverManager.getConnection(jdbcURL,"root", "a5638198");
@@ -357,6 +349,19 @@ public class domTest {
             if(psInsertRecord!=null) psInsertRecord.close();
             if(conn!=null) conn.close();
         } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter myWriter = new FileWriter("fileData.txt");
+            for(movieGenres mg : dt.inconsistency_data){
+                myWriter.write("inconsistency_movieId: " + mg.getMovieId() + "\n");
+
+            }
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
             e.printStackTrace();
         }
 

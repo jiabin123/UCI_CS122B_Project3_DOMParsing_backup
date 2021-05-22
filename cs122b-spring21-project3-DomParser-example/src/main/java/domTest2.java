@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.List;
 public class domTest2 {
     List<Stars> stars = new ArrayList<>();
     List<starMovies> starMovies = new ArrayList<>();
-    List<String> inconsistencies = new ArrayList<>();
+    HashSet<String> inconsistencies = new HashSet<>();
     Document dom;
 
     private void parseActorXml() {
@@ -85,7 +86,7 @@ public class domTest2 {
     }
 
 
-    private void parseDocument(Connection conn) {
+    private void parseDocument() {
         // get the document root Element
         Element documentElement = dom.getDocumentElement();
 
@@ -98,13 +99,13 @@ public class domTest2 {
                 Element element = (Element) nodeList.item(i);
 
                 // get the director object
-                parseFilms(element, conn);
+                parseFilms(element);
 
             }
         }
     }
 
-    private void parseFilms(Element element, Connection conn) {
+    private void parseFilms(Element element) {
         NodeList nodeList = element.getElementsByTagName("filmc");
 
         if (nodeList != null) {
@@ -112,12 +113,12 @@ public class domTest2 {
 
                 Element element2 = (Element) nodeList.item(i);
 
-                parseActors(element, conn);
+                parseActors(element);
             }
         }
     }
 
-    private void parseActors(Element element, Connection conn){
+    private void parseActors(Element element){
         NodeList nodeList = element.getElementsByTagName("m");
 
         if (nodeList != null) {
@@ -129,18 +130,8 @@ public class domTest2 {
                 String actor = getTextValue(element2, "a");
                 String movieTitle = getTextValue(element2, "t");
 
-                String query = "select * from stars where name = ?";
-                String starId = getStarId(stars, actor);
-                try{
-                    PreparedStatement statement = conn.prepareStatement(query);
-                    statement.setString(1,actor);
-                    ResultSet rs = statement.executeQuery();
-                    while(rs.next()){
-                        starId = rs.getString("id");
-                    }
-                }catch (Exception e){
 
-                }
+                String starId = getStarId(stars, actor);
 
                 if(starId.equals("null")){
                     // actors in casts124.xml, but missing in actors63.xml
@@ -308,7 +299,7 @@ public class domTest2 {
         System.out.println("Star parsing casts124.xml....");
         starTime = System.currentTimeMillis();
         dt.parseCastXml();
-        dt.parseDocument(conn);
+        dt.parseDocument();
         endTime = System.currentTimeMillis();
         System.out.println("finished parsing casts124.xml.....");
         System.out.println("it took " + (endTime-starTime) + " milliseconds");
@@ -321,6 +312,19 @@ public class domTest2 {
         dt.insertStarsTable(dt,conn, psInsertRecord,sqlInsertRecord);
 
         dt.insertStars_in_MoviesTable(dt,conn, psInsertRecord,sqlInsertRecord);
+
+        try {
+            FileWriter myWriter = new FileWriter("fileData.txt");
+            for(String s: dt.inconsistencies){
+                myWriter.write("inconsistencies actor: " + s + "\n");
+
+            }
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
 
     }
 
