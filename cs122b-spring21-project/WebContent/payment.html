@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/payment.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<div class= "Goback">
+    <a href="index.html"> Go back to Home page </a>
+</div>
+<div class="paymentBox" id="paymentBox">
+    <div id="price">
+
+    </div>
+    <form id="payment_form" method="POST" action="#">
+        <label for="firstname">First Name:</label>
+        <input type="text" class="form-control" id="firstname" name="firstname">
+        <label for="lastname">Last Name:</label>
+        <input type="text" class="form-control" id="lastname" name="lastname">
+        <label for="card">Credit Card Number:</label>
+        <input type="text" class="form-control" id="card" name="card">
+        <label for="date">Expiration Date:</label>
+        <input type="date" class="form-control" id="date" name="date">
+        <input type="submit" name="" value="Place Order">
+    </form>
+</div>
+
+
+<!-- include jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- include our own JS file -->
+<script src="payment.js"></script>
+
+
+</body>
+</html>

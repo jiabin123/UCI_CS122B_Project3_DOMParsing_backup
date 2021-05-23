@@ -1,0 +1,314 @@
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url("../picture/default.jpg");
+    background-size: cover;
+}
+
+.menu .genresMenu,
+.menu .titleMenu{
+    margin: 0;
+    /*padding: 20px 20px;*/
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .autocomplete-searchbox {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+    color: black;
+}
+
+.search-btn {
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
+
+.search-sel {
+    color: #e84118;
+    float: left;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
+
+.sear-btn > i {
+    font-size: 30px;
+}
+
+.autocomplete-searchbox {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+}
+
+
+
+.footer{
+    position: relative;
+    bottom: 20px;
+    right: 0px;
+    width: 100%;
+    color: #AAAAAA;
+    z-index: 4;
+    text-align: right;
+    margin-top: 50px;
+}
+.footer a{
+    color: #FFFFFF;
+}
+.footer .heart{
+    color: #ff3b30;
+}
+
+
+@media (min-width:991px){
+    .footer{
+        position: fixed;
+        bottom: 20px;
+    }
+}
+
+
+
+
+
+.top-left-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.top-left-right li {
+    float: left;
+    /*border-right:1px solid #bbb;*/
+}
+
+.top-left-right li:last-child {
+    border-right: none;
+}
+
+.top-left-right li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-left-right li a:hover:not(.active) {
+    /*background-color: #111;*/
+    color: #ffc107;
+    background: transparent;
+    background-color: rgba(255,255,255,0.5);
+}
+
+
+.menu b{
+    color: #ffffff;
+}
+
+
+.menu .genresMenu a,
+.menu .titleMenu a{
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    padding: 5px;
+
+}
+
+.menu .genresMenu a:hover,
+.menu .titleMenu a:hover
+{
+    color: #ffc107;
+    background-color: rgba(255,255,255,0.5);
+}
+
+
+
+
+
+
+
+
+
+.main .logo{
+    color: #FFFFFF;
+    font-size: 56px;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+    margin-top: 150px;
+    z-index: 3;
+}
+.main .logo.cursive{
+    font-family: 'Grand Hotel',cursive;
+    font-size: 82px;
+
+}
+.main .content{
+    position: relative;
+    z-index: 4;
+}
+.main .motto{
+    min-height: 140px;
+}
+.main .motto,.info-text{
+    font-size: 28px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.33);
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+
+
+.accordion > input[type="checkbox"] {
+    position: absolute;
+    left: -100vw;
+}
+
+.accordion .content {
+    overflow-y: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .content {
+    height: auto;
+    overflow: visible;
+}
+
+.accordion .label1 {
+    display: block;
+}
+
+
+
+.accordion {
+    /*margin-bottom: 1em;*/
+    position: absolute;
+    top: 55%;
+    left: 42%;
+    background: transparent;
+    background-color: rgba(47, 54, 64,0.3);
+}
+
+.accordion > input[type="checkbox"]:checked ~ .content {
+    padding: 15px;
+    border: 1px solid #e8e8e8;
+    border-top: 0;
+}
+
+.accordion .handle {
+    margin: 0;
+    font-size: 1.125em;
+    line-height: 1.2em;
+}
+
+.accordion .label1 {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 15px;
+    background: #2f3640;
+}
+
+.accordion .label1:hover,
+.accordion .label1:focus {
+    background: #2f3640;
+}
+
+.accordion .handle .label1:before {
+    font-family: 'fontawesome';
+    content: "\f054";
+    display: inline-block;
+    margin-right: 10px;
+    font-size: .58em;
+    line-height: 1.556em;
+    vertical-align: middle;
+}
+
+.accordion > input[type="checkbox"]:checked ~ .handle .label1:before {
+    content: "\f078";
+}
+.accordion {
+    max-width: 300px;
+}
+
+.accordion p:last-child {
+    margin-bottom: 0;
+}
+
+.search_form{
+    background: transparent;
+    background-color: rgba(47, 54, 64,0.5);
+}
+.search_form label{
+    display: inline-block;
+    text-align: right;
+    font-size: 16px;
+    background-color: #2f3640;
+    color: #f9f9f9;
+
+
+}
+.search_form input{
+
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/movie-list.css">
+    <title>Movie List</title>
+
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Fabflix</h1>
+    <p>Welcome to Fabflix, the online movie store</p>
+</div>
+<div class="navcolor">
+<div class="topnav">
+    <a class="homePage" href="index.html">Home Page</a>
+    <a class="shoppingCart" href="shopping-cart.html">Check out</a>
+
+    <div class="display">
+        <button class="displayBtn">Display</button>
+        <div class="display-content" id="display-content">
+<!--            <a href="#">Link 1</a>-->
+<!--            <a href="#">Link 2</a>-->
+<!--            <a href="#">Link 3</a>-->
+        </div>
+    </div>
+    <div class="sort">
+        <button class="sortBtn">Sort By</button>
+        <div class="sort-content" id="sort-content">
+<!--            <a href="#">Link 1</a>-->
+<!--            <a href="#">Link 2</a>-->
+<!--            <a href="#">Link 3</a>-->
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<div class="row"; id="content" style="background-color:#444444;text-align:center;">
+<!--        Id movie_table is for the jQuery to find the html element with id-->
+    <table id=movie_table_body>
+<!--            add the data from js-->
+<!--        <div>Whatever</div>-->
+    </table>
+</div>
+<div id="currentPage">
+    <b id="currentPages">We are at page: </b>
+</div>
+<div id = "page" >
+    <b id="pages">page numbers: </b><br>
+</div>
+<div id="bool" style="background-color:#F0F8FF;clear:both;text-align:center;">
+        contact us
+</div>
+
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Load our own JS file -->
+<script src="movie-list.js"></script>
+</body>
+
+
+</html>

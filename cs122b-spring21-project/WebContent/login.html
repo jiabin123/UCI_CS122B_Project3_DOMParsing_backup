@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fabflix</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+
+
+
+<div class= "Goback">
+<!--    <a href="index.html"> <i class="fa fa-user-circle" aria-hidden="true"></i> Go back to movie list page </a>-->
+    <a href="index.html">
+        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+        Go To Home Page
+    </a>
+</div>
+<div class="loginbox">
+    <img src="picture/avatar.png" class="avatar">
+    <h1>Login Here</h1>
+    <form id="login_form" method="POST" action="#">
+        <input class="employeeRadio" type="radio" id="employee" name="userType" value="employee">
+        <label class="employeeLabel" for="employee">Employee</label>
+        <input class="userRadio" type="radio" id="user" name="userType" value="user">
+        <label class="userLabel" for="user">User</label><br>
+        <label for="email">Username:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="username">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+        <input type="submit" name="" value="Login">
+<!--        <button type="submit" class="btn btn-primary">Submit</button><br>-->
+        <a href="#"> Lost your Password?</a><br>
+        <a href="#">Don't have an account?</a>
+        <div class="g-recaptcha" data-sitekey="6Le8SMEaAAAAAMc7CVGG_Gj8JdBj6NW2Ass0FOfn"></div>
+    </form>
+</div>
+
+
+<!-- include jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- include our own JS file -->
+<script src="login.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/_dashboard.css">
+    <title>Fabflix</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div>
+    <ul>
+        <li>
+            <a href="index.html">
+                Go to Main Page
+            </a>
+        </li>
+        <li style="float:right">
+            <a href="login.html">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                login Page
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h1>Dashboard</h1>
+
+<h2>Metadata</h2>
+<button type="button" class="collapsible">Metadata</button>
+<div class="metadata" id="metadata">
+</div>
+
+<h2>Manipulate the data</h2>
+<button type="button" class="collapsible">Add star</button>
+<div class="content">
+    <form class = "add_star_form" id="add_star_form" method="GET" action="#">
+        <div>
+            <label id="starNameLabel" for="starName">Star Name:</label>
+            <input type="text" class="form-control" id="starName" placeholder="Enter star name" name="starName"><br/>
+            <label id="starYearLabel" for="starYear">Star Birth Year:</label>
+            <input type="text" class="form-control" id="starYear" placeholder="Enter star DoB" name="starYear"><br/>
+            <input type="submit" class="add_star_btn" value="Add">
+        </div>
+    </form>
+</div>
+<button type="button" class="collapsible">Add movie</button>
+<div class="content">
+    <form class = "add_movie_form" id="add_movie_form" method="GET" action="#">
+        <div>
+            <label id="movieTitleLabel" for="movieTitle">Movie Title:</label>
+            <input type="text" class="form-control" id="movieTitle" placeholder="Enter movie title" name="movieTitle"><br/>
+            <label id="movieDirectorLabel" for="movieDirector">Movie Director:</label>
+            <input type="text" class="form-control" id="movieDirector" placeholder="Enter movie director" name="movieDirector"><br/>
+            <label id="movieYearLabel" for="movieYear">Movie Year:</label>
+            <input type="text" class="form-control" id="movieYear" placeholder="Enter movie year" name="movieYear"><br/>
+            <label id="movieGenresLabel" for="movieGenres">Movie Genres:</label>
+            <input type="text" class="form-control" id="movieGenres" placeholder="Enter movie genres" name="movieGenres"><br/>
+            <label id="movieStarLabel" for="movieStar">Movie Star:</label>
+            <input type="text" class="form-control" id="movieStar" placeholder="Enter movie star" name="movieStar"><br/>
+            <label id="movieStarYearLabel" for="movieStarYear">Movie Star Year:</label>
+            <input type="text" class="form-control" id="movieStarYear" placeholder="Enter movie star year" name="movieStarYear"><br/>
+            <input type="submit" class="add_movie_btn" value="Add">
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<script src="_dashboard.js"></script>
+</body>
+</html>

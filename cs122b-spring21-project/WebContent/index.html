@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Awesome Search Box</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- include jquery autocomplete JS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="main">
+
+    <div class = "top-left-right">
+        <ul>
+            <li>
+                <a href="shopping-cart.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Check out
+                </a>
+            </li>
+            <li style="float:right">
+                <a href="login.html">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    login
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class = "menu" id="menu">
+
+        <b class = "genresMenu" id="genresMenu">Browse Movie By Genre: </b><br/>
+        <b class = "titleMenu" id="titleMenu">Browse Movie By Title: </b><br/>
+    </div>
+
+    <div class="container">
+        <h1 class="logo cursive">
+            Fabflix
+        </h1>
+        <div class="content">
+            <!--            <h4 class="motto">Welcome to the fucking nice movie sotre</h4>-->
+        </div>
+    </div>
+
+    <form id="search_form" method="GET" action="#">
+        <div class="search-box">
+            <select class="search-sel" name="search-option">
+                <option value="title">title</option>
+                <option value="star">star</option>
+                <option value="year">year</option>
+                <option value="director">director</option>
+            </select>
+<!--            <input class="search-txt" type="text" name="content"  id="autocomplete" placeholder="Type to Search"/>-->
+            <input class="autocomplete-searchbox form-control"  type="text" name="content"  id="autocomplete" placeholder="Type to Search"/>
+            <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+            <input class="search-btn" type="submit" value="Find">
+            <!--        <i class="fas fa-search"></i>-->
+            <!--        <a class="search-btn" href="movie-list.html">-->
+            <!--            <i class="fas fa-search"></i>-->
+            <!--        </a>-->
+        </div>
+
+    </form>
+
+    <section class="accordion">
+        <input type="checkbox" name="collapse" id="handle1" checked="checked">
+        <h2 class="handle">
+            <label class="label1" for="handle1">Advance search</label>
+        </h2>
+        <div class="content">
+            <form class = "search_form" id="multisearch_form" method="GET" action="#">
+                <div>
+                    <label id="titleLabel" for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter title" name="title"><br/>
+                </div>
+                <div>
+                    <label id="yearLabel" for="year">Year:</label>
+                    <input type="text" class="form-control" id="year" placeholder="Enter year" name="year"><br/>
+                </div>
+                <div>
+                    <label id="directorLabel" for="director">Director:</label>
+                    <input type="text" class="form-control" id="director" placeholder="Enter director" name="director"><br/>
+                </div>
+                <div>
+                    <label id="starLabel" for="star">Star:</label>
+                    <input type="text" class="form-control" id="star" placeholder="Ente star" name="star"><br/>
+                </div>
+                <input type="submit" class="multisearch-btn" value="search">
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <div class="footer">
+        <div class="container">
+            Made with <i class="fa fa-heart heart"></i> by zhicheng ding & jiabin xiong
+        </div>
+    </div>
+
+</div>
+
+
+<script src="index.js"></script>
+<script src="index2.js"></script>
+</body>
+</html>
